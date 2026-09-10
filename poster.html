@@ -8,11 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Poppins:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
-      /* Custom styles to complement Tailwind */
+      /* Custom styles to complement Tailwind.
+         Palette follows the June 2026 study poster: gold butterfly, purple
+         headings, and pastel yellow / green / lavender panels with bold
+         rounded borders. */
+      :root {
+        --gold: #e8b62d;
+        --orange: #f2a541;
+        --purple: #8a3fb5;
+        --purple-deep: #6a2f8f;
+        --lavender: #e6cbf5;
+        --violet-border: #a46bd9;
+        --cream-yellow: #fcefae;
+        --green: #3e8e41;
+        --green-deep: #2e6b31;
+        --green-pale: #ebf7e4;
+        --rose: #d9679a;
+        --rose-pale: #fce8f1;
+      }
       body {
         font-family: 'Nunito', sans-serif;
         background-color: #fefaf6; /* Soft cream background */
@@ -23,21 +40,42 @@
       h4,
       h5,
       h6 {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Fredoka', 'Nunito', sans-serif;
+      }
+      .hero {
+        background: linear-gradient(
+          100deg,
+          #f4b5e2 0%,
+          #f6d3ec 40%,
+          #fbeecf 75%,
+          #fcf2b3 100%
+        );
+      }
+      .panel-border {
+        border-width: 4px;
+      }
+      .butterfly-trail {
+        color: var(--gold);
+        letter-spacing: 0.35em;
+        opacity: 0.75;
       }
     </style>
   </head>
-  <body class="text-gray-700 antialiased relative overflow-x-hidden">
+  <body class="text-gray-800 antialiased relative overflow-x-hidden">
     <div class="container mx-auto p-4 md:p-8 max-w-5xl">
       <!-- Header Section -->
-      <header class="text-center my-12 md:my-16">
+      <header
+        class="hero panel-border border-[#f2a541] rounded-3xl shadow-lg px-6 py-8 md:px-10 md:py-10 my-6 md:my-10 text-center"
+      >
         <img
           src="butterfly-studies-logo.avif"
           alt="The Butterfly Endometriosis Studies Logo"
-          class="mx-auto h-24 md:h-32 mb-4"
+          class="mx-auto w-full max-w-xs md:max-w-2xl mb-4"
         />
-        <p class="mt-4 text-xl md:text-2xl text-gray-600">
-          Surgical treatments of stage I – II endometriosis: The Butterfly Endometriosis Studies
+        <p
+          class="mt-2 text-xl md:text-2xl font-extrabold text-gray-900 tracking-wide"
+        >
+          Surgical treatments of stage I–II endometriosis
         </p>
       </header>
 
@@ -45,71 +83,91 @@
         <!-- Introduction Section -->
         <section
           id="intro"
-          class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 mb-12"
+          class="bg-[#fcefae] panel-border border-[#f2a541] p-6 md:p-8 rounded-3xl shadow-md mb-10"
         >
           <h2
-            class="flex items-center text-3xl md:text-4xl font-bold text-[#D48C7B] mb-4"
+            class="text-3xl md:text-4xl font-semibold text-[#8a3fb5] text-center mb-5"
           >
-            <span class="text-4xl mr-3">🦋</span> Exploring a New Surgical Path
+            About This Study
           </h2>
-          <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
-            <p>
-              Endometriosis is a long-term condition where tissue similar to the
-              lining of the uterus grows outside of it, often causing
-              significant pain. The Butterfly Endometriosis Studies are clinical research
-              trials exploring if a more extensive surgical technique could lead
-              to better, longer-lasting pain relief for people with stage I-II
-              endometriosis.
-            </p>
-            <p>
-              We are inviting about 20 people in Auckland to help us find out if
-              a larger trial comparing two surgical techniques (standard
-              excision vs complete posterior peritonectomy) will be possible in
-              the future.
-            </p>
-          </div>
+          <ul class="space-y-4 text-lg leading-relaxed text-gray-900">
+            <li class="flex items-start">
+              <span class="text-2xl mr-3 flex-shrink-0" aria-hidden="true"
+                >🦋</span
+              >
+              <span>
+                Endometriosis is a long-term condition where tissue similar to
+                the lining of the uterus grows outside of it, often causing
+                significant pain. The Butterfly Endometriosis Studies are
+                clinical research trials exploring whether a more extensive
+                surgical technique could lead to better, longer-lasting pain
+                relief for people with stage I–II endometriosis.
+              </span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-2xl mr-3 flex-shrink-0" aria-hidden="true"
+                >🦋</span
+              >
+              <span>
+                We are inviting about 20 people in Auckland to take part in a
+                research study comparing two surgical techniques: standard
+                excision and complete posterior peritonectomy. This study will
+                help determine whether a larger future study is possible and
+                explore whether we can achieve longer-lasting pain relief for
+                stage I–II endometriosis.
+              </span>
+            </li>
+          </ul>
         </section>
 
         <!-- Eligibility Section -->
-        <section id="eligibility" class="grid md:grid-cols-2 gap-8 mb-12">
-          <div class="bg-green-50 border-2 border-green-200 p-6 rounded-2xl">
-            <h3 class="text-2xl font-bold text-green-700 mb-4">
-              You may be able to join if you:
+        <section id="eligibility" class="grid md:grid-cols-2 gap-8 mb-10">
+          <div
+            class="bg-[#ebf7e4] panel-border border-[#3e8e41] rounded-3xl shadow-md overflow-hidden"
+          >
+            <h3
+              class="bg-[#3e8e41] text-white text-2xl font-semibold text-center py-3 px-4"
+            >
+              Who Can Join?
             </h3>
-            <ul class="space-y-3 text-lg text-green-800">
+            <ul class="p-6 space-y-3 text-lg font-bold text-[#2e6b31]">
               <li class="flex items-start">
-                <span class="mr-3 text-xl">✔️</span> Are a person with a uterus
-                between 18 and 50 years old.
+                <span class="mr-3" aria-hidden="true">✓</span> Are a person with
+                a uterus 18 – 50 years old.
               </li>
               <li class="flex items-start">
-                <span class="mr-3 text-xl">✔️</span> Are scheduled for a
-                laparoscopy for pelvic pain.
+                <span class="mr-3" aria-hidden="true">✓</span> Are scheduled for
+                a laparoscopy for pelvic pain.
               </li>
               <li class="flex items-start">
-                <span class="mr-3 text-xl">✔️</span> Have not had previous
-                surgical treatment for endometriosis.
+                <span class="mr-3" aria-hidden="true">✓</span> Have not had
+                previous surgical treatment for endometriosis.
               </li>
               <li class="flex items-start">
-                <span class="mr-3 text-xl">✔️</span> Agree to take part in the
-                study.
+                <span class="mr-3" aria-hidden="true">✓</span> Agree to take
+                part in the study.
               </li>
             </ul>
           </div>
-          <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl">
-            <h3 class="text-2xl font-bold text-red-700 mb-4">
-              Exclusion criteria include:
+          <div
+            class="bg-[#fce8f1] panel-border border-[#d9679a] rounded-3xl shadow-md overflow-hidden"
+          >
+            <h3
+              class="bg-[#d9679a] text-white text-2xl font-semibold text-center py-3 px-4"
+            >
+              Who Cannot Join?
             </h3>
-            <ul class="space-y-3 text-lg text-red-800">
+            <ul class="p-6 space-y-3 text-lg font-bold text-[#9c2f62]">
               <li class="flex items-start">
-                <span class="mr-3 text-xl">✖️</span> Being pregnant.
+                <span class="mr-3" aria-hidden="true">✕</span> Being pregnant.
               </li>
               <li class="flex items-start">
-                <span class="mr-3 text-xl">✖️</span> Previous removal or your
-                uterus or ovaries.
+                <span class="mr-3" aria-hidden="true">✕</span> Previous removal
+                of your uterus or ovaries.
               </li>
               <li class="flex items-start">
-                <span class="mr-3 text-xl">✖️</span> Suspected stage III-IV
-                endometriosis before surgery.
+                <span class="mr-3" aria-hidden="true">✕</span> Suspected stage
+                III–IV endometriosis before surgery.
               </li>
             </ul>
           </div>
@@ -118,46 +176,63 @@
         <!-- Journey Section -->
         <section
           id="journey"
-          class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 mb-12 text-center"
+          class="bg-[#e6cbf5] panel-border border-[#a46bd9] p-6 md:p-8 rounded-3xl shadow-md mb-10 text-center"
         >
-          <h2 class="text-3xl md:text-4xl font-bold text-[#6A5D9A] mb-8">
-            Your Journey in the Study: A 12-Month Path
+          <h2 class="text-3xl md:text-4xl font-semibold text-[#6a2f8f] mb-8">
+            Your journey in the study: A 12-Month Plan
           </h2>
-          <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-6 md:gap-4 items-start"
+          >
             <div class="flex flex-col items-center">
               <div
-                class="bg-purple-100 rounded-full h-24 w-24 flex items-center justify-center text-5xl mb-4"
+                class="bg-[#fbe7a1] rounded-full h-24 w-24 flex items-center justify-center text-5xl mb-4 shadow"
               >
                 📋
               </div>
-              <h4 class="text-xl font-bold text-purple-800">
+              <h4 class="text-xl font-semibold text-[#6a2f8f]">
                 Step 1: Screening
               </h4>
-              <p class="text-gray-600 mt-2">
-                We'll confirm your eligibility and you'll sign the consent form.
+              <p class="text-gray-800 mt-2">
+                We'll confirm your eligibility and you will sign the consent
+                form.
               </p>
+            </div>
+            <div
+              class="butterfly-trail hidden md:flex items-center h-24 text-sm select-none"
+              aria-hidden="true"
+            >
+              ····🦋····
             </div>
             <div class="flex flex-col items-center">
               <div
-                class="bg-purple-100 rounded-full h-24 w-24 flex items-center justify-center text-5xl mb-4"
+                class="bg-[#fbe7a1] rounded-full h-24 w-24 flex items-center justify-center text-5xl mb-4 shadow"
               >
                 🏥
               </div>
-              <h4 class="text-xl font-bold text-purple-800">Step 2: Surgery</h4>
-              <p class="text-gray-600 mt-2">
+              <h4 class="text-xl font-semibold text-[#6a2f8f]">
+                Step 2: Surgery
+              </h4>
+              <p class="text-gray-800 mt-2">
                 You'll be randomly assigned one of two surgical techniques.
               </p>
             </div>
+            <div
+              class="butterfly-trail hidden md:flex items-center h-24 text-sm select-none"
+              aria-hidden="true"
+            >
+              ····🦋····
+            </div>
             <div class="flex flex-col items-center">
               <div
-                class="bg-purple-100 rounded-full h-24 w-24 flex items-center justify-center text-5xl mb-4"
+                class="bg-[#fbe7a1] rounded-full h-24 w-24 flex items-center justify-center text-5xl mb-4 shadow"
               >
                 💬
               </div>
-              <h4 class="text-xl font-bold text-purple-800">
+              <h4 class="text-xl font-semibold text-[#6a2f8f]">
                 Step 3: Follow-up
               </h4>
-              <p class="text-gray-600 mt-2">
+              <p class="text-gray-800 mt-2">
                 Online questionnaires and one extra visit after 12 months.
               </p>
             </div>
@@ -167,83 +242,108 @@
         <!-- Quick Facts -->
         <section
           id="facts"
-          class="bg-purple-50 border-2 border-purple-200 p-6 md:p-8 rounded-2xl mb-12"
+          class="bg-white panel-border border-[#e8b62d] p-6 md:p-8 rounded-3xl shadow-md mb-10"
         >
-          <h2 class="text-3xl font-bold text-[#6A5D9A] text-center mb-6">
+          <h2
+            class="text-3xl md:text-4xl font-semibold text-[#8a3fb5] text-center mb-6"
+          >
             Quick Facts
           </h2>
           <div
-            class="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg"
+            class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg text-gray-900"
           >
-            <p><strong>Study Type:</strong> Randomised Controlled Trial</p>
-            <p><strong>Participants:</strong> ~20 people in NZ</p>
-            <p><strong>Duration:</strong> 12 months</p>
             <p>
-              <strong>Location:</strong> Auckland Hospital & Greenlane Surgical
-              Unit
+              <strong class="text-[#6a2f8f]">Study Type:</strong> Randomised
+              Controlled Trial
             </p>
-            <p><strong>Cost:</strong> No cost to you</p>
-            <p><strong>Compensation:</strong> A koha (gift) is provided.</p>
+            <p>
+              <strong class="text-[#6a2f8f]">Participants:</strong> ~20 people
+              in NZ
+            </p>
+            <p><strong class="text-[#6a2f8f]">Duration:</strong> 12 months</p>
+            <p>
+              <strong class="text-[#6a2f8f]">Location:</strong> Te Toka Tumai
+              Auckland Hospital &amp; Greenlane Surgical Unit
+            </p>
+            <p>
+              <strong class="text-[#6a2f8f]">Cost:</strong> No cost to you
+            </p>
+            <p>
+              <strong class="text-[#6a2f8f]">Compensation:</strong> A koha
+              (gift) is provided after completing the 3, 6 and 12 month
+              surveys.
+            </p>
           </div>
         </section>
 
         <!-- Contact Section -->
         <section
           id="contact"
-          class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 mb-12"
+          class="bg-[#fcefae] panel-border border-[#f2a541] p-6 md:p-8 rounded-3xl shadow-md mb-10"
         >
-          <h2 class="text-3xl md:text-4xl font-bold text-[#D48C7B] mb-4">
-            Have Questions? Get in Touch!
+          <h2
+            class="text-3xl md:text-4xl font-semibold text-[#8a3fb5] text-center mb-4"
+          >
+            Get in Touch!
           </h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            Taking part is completely your choice, and your standard care will
-            not be affected if you decide against it. We encourage you to
-            discuss this with family, whānau, or your GP. For any questions,
-            concerns, or to express your interest, please contact us.
+          <p class="text-lg text-gray-900 leading-relaxed mb-6">
+            Taking part is completely your choice. Your standard care will not
+            be affected if you decide against it. We encourage you to discuss
+            this with your family, whānau or GP. For any questions, concerns or
+            to express your interest, please contact us.
           </p>
           <div
-            class="bg-gray-50 border-2 border-dashed border-[#6A5D9A] p-6 rounded-2xl flex flex-col md:flex-row items-center justify-center gap-8 md:justify-between"
+            class="bg-white/70 border-2 border-dashed border-[#a46bd9] p-6 rounded-2xl flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 md:justify-between"
           >
             <div class="text-center md:text-left">
-              <p class="text-xl text-gray-800">
+              <p class="text-xl text-gray-900">
                 <strong>Lead Study Doctor:</strong> Dr Jessica Dunning
               </p>
-              <a
-                href="mailto:jessica@butterflystudies.nz"
-                class="my-2 inline-block text-2xl font-bold text-[#6A5D9A] hover:underline"
-                >jessica@butterflystudies.nz</a
-              >
-              <p class="text-xl text-gray-800">
-                <strong>Phone:</strong> (09) 243 0898
+              <p class="text-xl text-gray-900 mt-2">
+                <strong>Email:</strong>
+                <a
+                  href="mailto:butterfly@auckland.ac.nz"
+                  class="font-bold text-[#8a3fb5] hover:underline"
+                  >butterfly@auckland.ac.nz</a
+                >
               </p>
-              <p class="text-xl text-gray-800">
+              <p class="text-xl text-gray-900 mt-2">
+                <strong>Phone:</strong>
+                <a href="tel:+642885170053" class="hover:underline"
+                  >028 8517 0053</a
+                >
+              </p>
+              <p class="text-xl text-gray-900 mt-2">
                 <strong>More at:</strong>
                 <a
                   href="https://www.butterflystudies.nz"
-                  class="text-[#6A5D9A] hover:underline"
-                >
-                  www.butterflystudies.nz</a
+                  class="font-bold text-[#8a3fb5] hover:underline"
+                  >www.butterflystudies.nz</a
                 >
               </p>
             </div>
-            <div class="flex-shrink-0">
+            <div class="text-5xl md:text-6xl" aria-hidden="true">🦋</div>
+            <div class="flex-shrink-0 text-center">
               <img
                 src="qr.png"
-                alt="QR Code to contact us"
-                class="rounded-lg shadow-md max-w-[170px]"
+                alt="QR code linking to www.butterflystudies.nz"
+                class="rounded-lg shadow-md max-w-[170px] mx-auto bg-white"
               />
-              <p class="text-sm text-center mt-2 text-gray-500">
-                Scan for more info
+              <p class="text-sm font-bold text-[#8a3fb5] mt-2">
+                Scan to learn more
               </p>
             </div>
           </div>
         </section>
+
       </main>
 
       <!-- Footer -->
-      <footer class="text-center mt-16 pt-8 border-t-2 border-gray-200">
-        <p class="text-lg font-semibold text-gray-600 mb-4">
-          This study is proudly supported by:
+      <footer
+        class="text-center mt-12 bg-white panel-border border-[#e8b62d] rounded-3xl shadow-md p-6 md:p-8"
+      >
+        <p class="text-lg font-semibold text-gray-700 mb-6">
+          This study is proudly supported by
         </p>
         <div
           class="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 md:gap-x-14 md:gap-y-10"
@@ -253,11 +353,11 @@
               href="https://www.auckland.ac.nz/en.html"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block opacity-80 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6A5D9A] focus-visible:ring-offset-2 rounded"
+              class="inline-block opacity-90 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a3fb5] focus-visible:ring-offset-2 rounded"
             >
               <img
                 src="sponsor-uoa-logo.png"
-                alt="University of Auckland Logo"
+                alt="Waipapa Taumata Rau University of Auckland Logo"
                 class="mx-auto h-16"
               />
             </a>
@@ -267,11 +367,11 @@
               href="https://www.healthnz.govt.nz/hospitals-services/hospitals/auckland/auckland-central"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block opacity-80 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6A5D9A] focus-visible:ring-offset-2 rounded"
+              class="inline-block opacity-90 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a3fb5] focus-visible:ring-offset-2 rounded"
             >
               <img
                 src="sponsor-te-toka-tumai-logo.png"
-                alt="Te Toka Tumai Auckland Hospital Logo"
+                alt="Te Whatu Ora Health New Zealand, Te Toka Tumai Auckland Logo"
                 class="mx-auto h-16"
               />
             </a>
@@ -281,11 +381,11 @@
               href="https://ages.com.au/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block opacity-80 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6A5D9A] focus-visible:ring-offset-2 rounded"
+              class="inline-block opacity-90 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a3fb5] focus-visible:ring-offset-2 rounded"
             >
               <img
                 src="sponsor-ages-logo.png"
-                alt="Australasian Gynaecological Endoscopy and Surgery (AGES) Society"
+                alt="Australasian Gynaecological Endoscopy and Surgery (AGES) Society Logo"
                 class="mx-auto h-16"
               />
             </a>
@@ -295,17 +395,17 @@
               href="https://ahf.org.nz/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block opacity-80 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6A5D9A] focus-visible:ring-offset-2 rounded"
+              class="inline-block opacity-90 hover:opacity-100 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8a3fb5] focus-visible:ring-offset-2 rounded"
             >
               <img
                 src="sponsor-ahref-logo.png"
-                alt="Auckland Hospitals Foundation"
+                alt="Auckland Hospital Foundation, He Kāmaka Hōhipera ō Tāmaki Logo"
                 class="mx-auto h-16"
               />
             </a>
           </div>
         </div>
-        <p class="text-sm text-gray-500 mt-8">
+        <p class="text-sm text-gray-600 mt-8">
           Approved by the Central Health and Disability Ethics Committee (HDEC)
           on 17 November 2025 for three years. Reference Number 2025 FULL 24069
         </p>
